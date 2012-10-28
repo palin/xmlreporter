@@ -7,3 +7,5 @@
     <%= link_to "Destroy", report_path(report.id), :method => :delete %>
   </p>
 <% end %>
+
+<%= link_to "Create random new", reports_path(:content => 'random content'), :method => :post %>
