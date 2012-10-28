@@ -9,6 +9,7 @@ class ReportsController < ApplicationController
   end
 
   def create
+    puts params
     @report = Report.create(:content => params[:xml_content]) if params[:xml_content].present?
 
     if @report
