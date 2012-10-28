@@ -10,6 +10,7 @@ class ReportsController < ApplicationController
 
   def create
     puts params
+    puts request.body.read
     @report = Report.create(:content => params[:xml_content]) if params[:xml_content].present?
 
     if @report
