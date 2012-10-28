@@ -10,7 +10,11 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.create(:content => params[:content])
-    redirect_to root_path
+    if @report
+      render :text => "OK"
+    else
+      render :text => "WRONG"
+    end
   end
 
   def destroy
