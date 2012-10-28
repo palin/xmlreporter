@@ -9,7 +9,8 @@ class ReportsController < ApplicationController
   end
 
   def create
-    @report = Report.create(:content => params[:content])
+    @report = Report.create(:content => params[:xml_content]) if params[:xml_content].present?
+
     if @report
       render :text => "OK"
     else
@@ -19,7 +20,10 @@ class ReportsController < ApplicationController
 
   def destroy
     @report = Report.find(params[:id])
-    @report.destroy
+    begin
+      @report.destroy
+    end
+    redirect_to root_path
   end
 
 end
