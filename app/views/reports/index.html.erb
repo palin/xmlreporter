@@ -1,0 +1,9 @@
+<h1>Available reports: </h1>
+<br /><br />
+<% @reports.each do |report| %>
+  <p>
+    <%= link_to "Report nr #{report.id}", report_path(report.id) %>
+    <br />
+    <%= link_to "Destroy", report_path(report.id), :method => :delete %>
+  </p>
+<% end %>
