@@ -19,10 +19,8 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    @report = Report.find(params[:id])
-    begin
-      @report.destroy
-    end
+    @report = Report.find_by_id(params[:id])
+    @report.destroy if @report.present?
     redirect_to root_path
   end
 
