@@ -7,6 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 gem 'nokogiri'
+gem 'psych'
+
 group :development do
   gem 'sqlite3'
 end
